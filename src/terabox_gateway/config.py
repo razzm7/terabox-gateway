@@ -36,7 +36,7 @@ ALLOWED_HOSTS: set[str] = {
 
 
 # Unified Cloudflare Worker proxy configuration
-PROXY_BASE_URL: str = "https://terabox-proxy.razmym7.workers.dev"
+PROXY_BASE_URL: str = os.getenv("PROXY_BASE_URL", "https://terabox-proxy.razmym7.workers.dev")
 PROXY_MODE_RESOLVE: str = "resolve"  # Recommended: automatic resolution with jsToken extraction
 PROXY_MODE_PAGE: str = "page"        # For debugging: returns raw HTML
 PROXY_MODE_API: str = "api"          # Manual API access when jsToken is known
